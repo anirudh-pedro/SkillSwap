@@ -3,7 +3,7 @@ import React, { useId, useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import type { Container } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
-import { cn } from "../../../libs/utils";
+import { cn } from "../../../../libs/utils";
 import { motion, useAnimation } from "framer-motion";
 
 type ParticlesProps = {
@@ -52,7 +52,7 @@ const SparklesCore: React.FC<ParticlesProps> = (props) => {
       {init && (
         <Particles
           id={id || generatedId}
-          className={cn("h-full w-full")}
+          className={cn("h-40 w-50")}
           particlesLoaded={particlesLoaded}
           options={{
             background: { color: { value: background || "#0d47a1" } },
@@ -83,16 +83,16 @@ const SparklesCore: React.FC<ParticlesProps> = (props) => {
 
 const SparklesPreview: React.FC = () => {
   return (
-    <div className="absolute h-screen w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
-      <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20">
+    <div className="h-fit w-fit bg-black flex flex-col items-center justify-center overflow-hidden rounded-md backdrop-blur-[30px] shadow-[0_0_10px_rgba(227,228,237,0.37)] border border-white/20">
+      <h1 className="text-3xl font-bold text-center text-white relative z-20">
         SkillSwap
       </h1>
-      <div className="w-[40rem] h-40 relative">
+      <div className="w-[12rem] h-5 relative">
         {/* Gradients */}
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+        <div className="absolute inset-x-6 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+        <div className="absolute inset-x-6 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
 
         {/* Core component */}
         <SparklesCore
