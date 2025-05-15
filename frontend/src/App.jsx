@@ -2,13 +2,15 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import SparklesPreview from '../components/mage-ui/background/sparkles'
+import Logo from '../components/Logo'
+import Nav from '../components/Nav'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <p className='bg-red-200'>Hello World</p>
+      <Nav />
     </>
   )
 }
