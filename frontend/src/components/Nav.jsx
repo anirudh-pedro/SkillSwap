@@ -6,7 +6,7 @@ import Profile from './Profile'
 const Nav = () => {
   return (
     <>
-        <div className='h-20 w-screen flex justify-around text-white items-center align-middle'>
+        <div className='w-full flex justify-around text-white items-center align-middle'>
             <Logo />
             <Navbar />
             <Profile />
