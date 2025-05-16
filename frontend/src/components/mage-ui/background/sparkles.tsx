@@ -52,12 +52,12 @@ const SparklesCore: React.FC<ParticlesProps> = (props) => {
       {init && (
         <Particles
           id={id || generatedId}
-          className={cn("h-40 w-50")}
+          className={cn("h-20 w-60")}
           particlesLoaded={particlesLoaded}
           options={{
             background: { color: { value: background || "#0d47a1" } },
             fullScreen: { enable: false, zIndex: 1 },
-            fpsLimit: 120,
+            fpsLimit: 130,
             interactivity: {
               events: {
                 onClick: { enable: true, mode: "push" },
@@ -83,8 +83,8 @@ const SparklesCore: React.FC<ParticlesProps> = (props) => {
 
 const SparklesPreview: React.FC = () => {
   return (
-    <div className="h-fit w-fit bg-black flex flex-col items-center justify-center overflow-hidden rounded-md backdrop-blur-[30px] shadow-[0_0_10px_rgba(227,228,237,0.37)] border border-white/20">
-      <h1 className="text-3xl font-bold text-center text-white relative z-20">
+    <div className="h-fit w-fit bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+      <h1 className="text-3xl text-center text-white relative z-20">
         SkillSwap
       </h1>
       <div className="w-[12rem] h-5 relative">
