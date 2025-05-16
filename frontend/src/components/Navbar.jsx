@@ -4,7 +4,7 @@ import NavTabs from './mage-ui/container/nav-tabs'
 const Navbar = () => {
   return (
     <>
-      <NavTabs tabs={['Home', 'Connect', 'Profile', 'Settings', 'Logout']} />
+      <NavTabs tabs={['Home', 'Connect', 'Settings',"Contact Us", 'Profile']} />
     </>
   )
 }

@@ -14,7 +14,7 @@ export default function NavTabs({ tabs }: { tabs: string[] }) {
   const [selected, setSelected] = useState<string>(tabs[0]);
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-4 rounded-md bg-violet-950 p-6">
+    <div className="flex flex-wrap items-center justify-center gap-4 rounded-md bg-transparent p-6">
       {tabs.map((tab) => (
         <Tab text={tab} selected={selected === tab} setSelected={setSelected} key={tab} />
       ))}
@@ -27,11 +27,11 @@ const Tab = ({ text, selected, setSelected }: TabProps) => {
     <button
       onClick={() => setSelected(text)}
       className={cn(
-        "relative rounded-md p-2 text-sm transition-all",
+        "relative rounded-md p-2 text-sm transition-all bg-transparent",
         selected ? "text-white" : "text-slate-300 hover:font-black",
       )}
     >
-      <p className="relative z-50 min-w-20">{text}</p>
+      <p className=" relative text-white z-50 min-w-20">{text}</p>
       {selected && (
         <motion.span
           layoutId="tabs"
