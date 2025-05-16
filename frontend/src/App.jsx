@@ -5,12 +5,13 @@ import './App.css'
 import SparklesPreview from './components/mage-ui/background/sparkles'
 import Logo from './components/Logo'
 import Nav from './components/Nav'
-
+import CanvasCursorEffect from "../../../SkillSwap/frontend/src/components/mage-ui/cursor-effects/canvas-cursor-effect";
 function App() {
 
   return (
     <>
       <Nav/>
+      <CanvasCursorEffect />
     </>
   )
 }
