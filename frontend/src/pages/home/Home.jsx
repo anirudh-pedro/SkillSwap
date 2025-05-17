@@ -8,7 +8,7 @@ const Home = () => {
         <div className='flex flex-col gap-5 min-w-4 max-w-fit bg-black absolute '>
             <Spline />
         </div>
-        <div className='backdrop-blur-2xl bg-white/0 px-10 py-15 border border-white/20'>
+        <div className='backdrop-blur-2xl bg-white/0 px-10 py-15 border border-white/20 select-none'>
             <h1 className='text-5xl font-bold text-center'>Welcome to the Future</h1>
             <p className='text-center'>This is a simple landing page for a web3 project.</p>
             <div className='flex gap-5 justify-center mt-5'>
