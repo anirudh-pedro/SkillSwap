@@ -3,7 +3,7 @@ import React from 'react'
 const Profile = () => {
   return (
     <div className='flex gap-5'>
-      <div className='w-16 h-16 rounded-full overflow-hidden'>  
+      <div className='w-12 h-12 rounded-full overflow-hidden'>  
         <img src="https://picsum.photos/200" alt="" />
       </div>
       <div>
