@@ -1,17 +1,18 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import SparklesPreview from "./components/mage-ui/background/sparkles";
-import Logo from "./components/Logo";
+import React from "react";
 import Nav from "./components/Nav";
-import CanvasCursorEffect from "../../../SkillSwap/frontend/src/components/mage-ui/cursor-effects/canvas-cursor-effect";
+import Outlet from "./pages/Outlet";
+import {Route, Routes} from "react-router-dom";
+import Home from "./pages/home/Home";
 function App() {
   return (
-      <div className="bg-body">
-        <Nav />
-        <CanvasCursorEffect />
-      </div>
+    <div className="bg-black">
+      <Routes>
+        <Route path="/" element={<Outlet />} >
+          <Route index element={<Home />} />
+        </Route>
+        
+      </Routes>
+    </div>
   );
 }
 
