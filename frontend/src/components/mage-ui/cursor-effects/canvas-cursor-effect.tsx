@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-
 const useCanvasCursor = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -278,11 +277,14 @@ const CanvasCursor = () => {
   const canvasRef = useCanvasCursor();
 
   return (
+    <>
     <canvas
       ref={canvasRef}
       id="canvas"
-      className=" pointer-events-none inset-0 w-full h-screen z-50"
-    />
+      className="fixed pointer-events-none inset-0 w-full h-screen z-50"
+      />
+      
+      </>
   );
 };
 

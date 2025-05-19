@@ -1,20 +1,24 @@
 import React from "react";
 import Nav from "./components/Nav";
-import Outlet from "./pages/Outlet";
+// import Outlet from "./pages/Outlet";
 import {Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
 import GetStarted from "./pages/GetStarted";
 import { LogIn } from "lucide-react";
 import LoginCard from "./components/Login";
+import About from "./pages/About";
 function App() {
   return (
-    <div className="bg-black">
+    <div className="">
       <Routes>
-        <Route path="/" element={<Outlet />} >
-        <Route path="/" element={<Home />} />
-        </Route>
-        <Route path="/getstarted" element={<GetStarted />} />
-        <Route path="/login" element={<LoginCard/>}/>
+          <Route index element={
+            <div className="flex-col gap-10">
+              <Home />
+              <About />
+            </div>
+              } />
+          <Route path="/login" element={<LoginCard/>}/>
+          <Route path="/getstarted" element={<GetStarted />} />
       </Routes>
     </div>
   );

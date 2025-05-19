@@ -1,14 +1,9 @@
 import React from 'react'
-import CanvasCursor from './mage-ui/cursor-effects/canvas-cursor-effect'
 
-const Homeleft = () => {
+const HomeLeft = () => {
   return (
-    <>
-      <div className='w-1/2 h-[90vh]'>
-        <div className=''>Homeleft</div>
-      </div>
-    </>
+    <div className='w-1/2 bg-black'>HomeLeft</div>
   )
 }
 
-export default Homeleft
+export default HomeLeft
