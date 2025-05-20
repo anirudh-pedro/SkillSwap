@@ -83,7 +83,7 @@ const SparklesCore: React.FC<ParticlesProps> = (props) => {
 
 const SparklesPreview: React.FC = () => {
   return (
-    <div className="h-fit w-fit bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+    <div className="h-fit w-fit bg-transparent flex flex-col items-center justify-center overflow-hidden rounded-md">
       <h1 className="text-3xl font-bold text-center text-white relative z-20">
         SkillSwap
       </h1>
