@@ -4,18 +4,28 @@ import HomeLeft from '../components/HomeLeft'
 import { Outlet } from 'react-router-dom'
 import HomeRight from '../components/HomeRight'
 import CanvasCursor from '../components/mage-ui/cursor-effects/canvas-cursor-effect'
+
+import ClickSpark from '../components/reactbits/ClickSpark'
 import Nav from '../components/Nav'
 import LampDemo from '../components/mage-ui/background/lamp'
 
 const Home = () => {
   return (
     <>
-        <CanvasCursor
-
-        />
-        <Nav />
+        
       <div className='flex gap-2.5 w-[100%] h-screen bg-black'>
+      <ClickSpark
+        sparkColor='#fff'
+        sparkSize={10}
+        sparkRadius={15}
+        sparkCount={8}
+        duration={400}
+      >
+        <CanvasCursor />
+        <Nav />
+
         <LampDemo />
+      </ClickSpark>
       </div>
     </>
   )
