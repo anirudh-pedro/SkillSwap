@@ -5,8 +5,9 @@ import {Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
 import GetStarted from "./pages/GetStarted";
 import { LogIn } from "lucide-react";
-import LoginCard from "./components/Login";
+import Login from "./components/Login";
 import About from "./pages/About";
+import Signup from "./components/Signup";
 function App() {
   return (
     <div className="">
@@ -17,7 +18,8 @@ function App() {
               <About />
             </div>
               } />
-          <Route path="/login" element={<LoginCard/>}/>
+          <Route path="/login" element={<Login />}/>
+          <Route path="/signup" element={<Signup />}/>
           <Route path="/getstarted" element={<GetStarted />} />
       </Routes>
     </div>
