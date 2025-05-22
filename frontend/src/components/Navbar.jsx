@@ -1,10 +1,12 @@
 import React from 'react'
 import NavTabs from './mage-ui/container/nav-tabs'
 
-const Navbar = () => {
+const Navbar = ({setLoaded}) => {
+  // setLoaded is used to show a loading indicator during page transitions
+  
   return (
     <>
-      <NavTabs tabs={['Home', 'Connect', 'About',"Contact Us", 'Profile']} />
+      <NavTabs setLoaded={setLoaded} tabs={['Home', 'Connect', 'About',"Contact Us", 'Profile']} />
     </>
   )
 }
