@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Eye, EyeOff, Lock, Mail, User, ChevronLeft } from 'lucide-react';
-import Aurora from './reactbits/Aurora';
-import Orb from './reactbits/Orb';
+import Aurora from '../components/reactbits/Aurora';
+import Orb from '../components/reactbits/Orb';
 
 export default function Signup() {
   const [fullName, setFullName] = useState('');

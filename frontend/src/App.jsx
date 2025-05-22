@@ -5,22 +5,21 @@ import {Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
 import GetStarted from "./pages/GetStarted";
 import { LogIn } from "lucide-react";
-import Login from "./components/Login";
+import Login from "./pages/Login";
 import About from "./pages/About";
-import Signup from "./components/Signup";
+import Signup from "./pages/Signup";
+import Layout from "./layout/layout";
 function App() {
   return (
     <div className="">
       <Routes>
-          <Route index element={
-            <div className="flex-col gap-10">
-              <Home />
-              <About />
-            </div>
-              } />
-          <Route path="/login" element={<Login />}/>
-          <Route path="/signup" element={<Signup />}/>
-          <Route path="/getstarted" element={<GetStarted />} />
+          <Route path="/" element={<Layout />}>
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/getstarted" element={<GetStarted />} />
+          </Route>
       </Routes>
     </div>
   );

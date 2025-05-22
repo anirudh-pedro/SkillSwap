@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Eye, EyeOff, Lock, Mail } from 'lucide-react';
-import Aurora from './reactbits/Aurora';
-import Orb from './reactbits/Orb';
+import Aurora from '../components/reactbits/Aurora';
+import Orb from '../components/reactbits/Orb';
 
 
 export default function Login() {

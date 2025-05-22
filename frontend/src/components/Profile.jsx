@@ -1,15 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import Login from '../pages/Login'
 
 const Profile = () => {
   return (
     <div className='flex gap-5'>
-      <div className='w-12 h-12 rounded-full overflow-hidden'>  
-        <img src="https://picsum.photos/200" alt="" />
-      </div>
-      <div>
-        <h1 className='text-xl font-bold'>John Doe</h1>
-        <p className='hover:text-red-500 cursor-pointer'>Log Out</p>
-      </div>
+      <Link to="/login" className='bg-blue-500 text-white px-4 py-2 rounded'>Login</Link>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 import { cn } from "../../../../libs/utils";
 
@@ -12,6 +13,8 @@ interface TabProps {
 
 export default function NavTabs({ tabs }: { tabs: string[] }) {
   const [selected, setSelected] = useState<string>(tabs[0]);
+  console.log("tabs", tabs);
+  console.log("selected", selected);
 
   return (
     <div className="flex flex-wrap items-center justify-center gap-4 rounded-md bg-transparent p-6">
@@ -23,9 +26,17 @@ export default function NavTabs({ tabs }: { tabs: string[] }) {
 }
 
 const Tab = ({ text, selected, setSelected }: TabProps) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    setSelected(text);
+    // console.log("selected " + selected+ "text " + text);  
+    navigate(`/${text.split(" ")[0].toLowerCase()}`);
+  }
+  
   return (
     <button
-      onClick={() => setSelected(text)}
+      onClick={handleClick}
       className={cn(
         "relative rounded-md p-2 text-sm transition-all bg-transparent",
         selected ? "text-white" : "text-slate-300 hover:font-black",
