@@ -3,3 +3,18 @@
 .bg-body{
     background-color: black;
 }
+
+
+/* 
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+
+.bg-body {
+  background-color: black;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+} */

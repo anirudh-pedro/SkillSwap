@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import About from "./pages/About";
 import Signup from "./pages/Signup";
 import Layout from "./layout/layout";
+import UserDetails from "./pages/UserDetails";
 function App() {
   return (
     <div className="">
@@ -23,6 +24,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/getstarted" element={<GetStarted />} />
+            <Route path="/userdetails" element={<UserDetails />} />
           </Route>
       </Routes>
     </div>
