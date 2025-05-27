@@ -1,6 +1,6 @@
 import React from 'react'
 import Spline from '../components/spline'
-import HomeLeft from '../components/HomeLeft'
+// import HomeLeft from '../components/HomeLeft'
 import { Outlet } from 'react-router-dom'
 import HomeRight from '../components/HomeRight'
 import CanvasCursor from '../components/mage-ui/cursor-effects/canvas-cursor-effect'
