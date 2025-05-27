@@ -286,10 +286,10 @@ const OnboardingForm = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="w-full onboarding-form-container mt-20 pt-4" // Added more top margin
+      className="w-full onboarding-form-container mt-20 pt-4 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-800 min-h-screen text-slate-100" // Added text-slate-100 for light text
     >
       <FormProvider {...methods}>
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full bg-white rounded-xl overflow-hidden shadow-md">
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full bg-slate-900 rounded-xl overflow-hidden shadow-md border border-slate-800 text-slate-100"> {/* Added text-slate-100 */}
           <div className="px-4 py-5 sm:px-8">
             {isSubmitSuccess ? (
               // Success state
@@ -305,8 +305,8 @@ const OnboardingForm = () => {
                       d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">Registration Complete!</h2>
-                <p className="text-gray-600 mb-6 max-w-md mx-auto">
+                <h2 className="text-2xl font-bold text-slate-100 mb-2">Registration Complete!</h2> {/* Changed to text-slate-100 */}
+                <p className="text-slate-300 mb-6 max-w-md mx-auto">
                   Thank you for joining our skill exchange community. Your profile has been created successfully.
                 </p>
                 <button 
@@ -331,10 +331,10 @@ const OnboardingForm = () => {
                       <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
                     </svg>
                   </div>
-                  <h1 className="text-2xl font-bold text-gray-800 mb-1">
+                  <h1 className="text-2xl font-bold text-slate-100 mb-1">
                     Join Our Skill Swap Community
                   </h1>
-                  <p className="text-gray-600 text-base mx-auto">
+                  <p className="text-slate-300 text-base mx-auto">
                     Connect with others who want to teach and learn new skills.
                   </p>
                 </motion.div>
@@ -369,11 +369,11 @@ const OnboardingForm = () => {
                   </AnimatePresence>
                   
                   {/* Subtle scroll indicator at bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-t from-slate-900 to-transparent pointer-events-none"></div> {/* Changed to from-slate-900 */}
                 </div>
                 
                 {/* Fixed position buttons outside the scrolling area */}
-                <div className="py-2 border-t border-gray-100">
+                <div className="py-2 border-t border-slate-800">
                   <FormButtons 
                     onNext={nextStep}
                     onBack={prevStep}
@@ -390,11 +390,11 @@ const OnboardingForm = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="bg-gray-50 p-4 text-center border-t border-gray-100"
+            className="bg-slate-900 p-4 text-center border-t border-slate-800"
           >
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-slate-400">
               All information provided is securely stored and handled according to our{" "}
-              <a href="#" className="text-blue-600 hover:underline font-medium">
+              <a href="#" className="text-cyan-400 hover:underline font-medium">
                 Privacy Policy
               </a>
             </p>

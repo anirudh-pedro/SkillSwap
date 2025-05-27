@@ -365,7 +365,7 @@ const PersonalInfoStep = () => {
             initial="hidden"
             animate="visible"
             variants={containerVariants}
-            className="flex flex-col space-y-6 py-2 relative z-50"
+            className="flex flex-col space-y-6 py-2 relative z-50 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-800 min-h-screen text-slate-100"
         >
             <motion.div 
                 variants={itemVariants}
@@ -373,22 +373,22 @@ const PersonalInfoStep = () => {
             >
                 <motion.div 
                     variants={iconVariants}
-                    className="w-16 h-16 bg-gradient-to-tr from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-200"
+                    className="w-16 h-16 bg-gradient-to-tr from-cyan-500 to-cyan-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-cyan-200"
                 >
                     <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" />
                     </svg>
                 </motion.div>
-                <h2 className="text-2xl font-bold text-gray-800 tracking-tight">Personal Information</h2>
-                <p className="text-gray-600 mt-1 max-w-md mx-auto">
+                <h2 className="text-2xl font-bold text-slate-100 tracking-tight">Personal Information</h2>
+                <p className="text-slate-300 mt-1 max-w-md mx-auto">
                     Tell us about yourself so we can personalize your experience
                 </p>
-                <div className="h-1 w-16 bg-blue-500 mx-auto mt-4 rounded-full"></div>
+                <div className="h-1 w-16 bg-cyan-500 mx-auto mt-4 rounded-full"></div>
             </motion.div>
             
             <motion.div 
                 variants={itemVariants}
-                className="bg-white rounded-xl p-6 sm:p-7 shadow-lg border border-gray-100 space-y-5"
+                className="bg-slate-900 rounded-xl p-6 sm:p-7 shadow-lg border border-slate-800 space-y-5"
             >
                 <motion.div 
                     variants={itemVariants}
@@ -399,7 +399,7 @@ const PersonalInfoStep = () => {
                         label="Full Name"
                         placeholder={fullNameValue ? "" : "Enter your full name"}
                         leftIcon={
-                            <svg className="w-5 h-5 text-gray-400 group-hover:text-blue-500 transition-colors duration-200" fill="currentColor" viewBox="0 0 20 20">
+                            <svg className="w-5 h-5 text-slate-400 group-hover:text-cyan-500 transition-colors duration-200" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" />
                             </svg>
                         }
@@ -413,7 +413,7 @@ const PersonalInfoStep = () => {
                         onFocus={() => handleFocus('fullName')}
                         onBlur={() => handleBlur('fullName')}
                         error={errors.fullName}
-                        className="transition-all duration-300 focus:ring-2 focus:ring-blue-300 group-hover:border-blue-300"
+                        className="transition-all duration-300 focus:ring-2 focus:ring-cyan-300 group-hover:border-cyan-300"
                     />
                 </motion.div>
                 
@@ -427,7 +427,7 @@ const PersonalInfoStep = () => {
                         type="email"
                         placeholder={emailValue ? "" : "your.email@example.com"}
                         leftIcon={
-                            <svg className="w-5 h-5 text-gray-400 group-hover:text-blue-500 transition-colors duration-200" fill="currentColor" viewBox="0 0 20 20">
+                            <svg className="w-5 h-5 text-slate-400 group-hover:text-cyan-500 transition-colors duration-200" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                             </svg>
@@ -442,7 +442,7 @@ const PersonalInfoStep = () => {
                         onFocus={() => handleFocus('email')}
                         onBlur={() => handleBlur('email')}
                         error={errors.email}
-                        className="transition-all duration-300 focus:ring-2 focus:ring-blue-300 group-hover:border-blue-300"
+                        className="transition-all duration-300 focus:ring-2 focus:ring-cyan-300 group-hover:border-cyan-300"
                     />
                 </motion.div>
                 
@@ -493,7 +493,7 @@ const PersonalInfoStep = () => {
                                 type="tel"
                                 placeholder={phoneValue ? "" : "Enter phone number"}
                                 leftIcon={
-                                    <svg className="w-5 h-5 text-gray-400 group-hover:text-blue-500 transition-colors duration-200" fill="currentColor" viewBox="0 0 20 20">
+                                    <svg className="w-5 h-5 text-slate-400 group-hover:text-cyan-500 transition-colors duration-200" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                                     </svg>
                                 }
@@ -501,7 +501,7 @@ const PersonalInfoStep = () => {
                                 onFocus={() => handleFocus('phone')}
                                 onBlur={() => handleBlur('phone')}
                                 error={errors.phone}
-                                className="transition-all duration-300 focus:ring-2 focus:ring-blue-300 group-hover:border-blue-300"
+                                className="transition-all duration-300 focus:ring-2 focus:ring-cyan-300 group-hover:border-cyan-300"
                                 hideLabel={true}
                                 inputMode="numeric"
                             />

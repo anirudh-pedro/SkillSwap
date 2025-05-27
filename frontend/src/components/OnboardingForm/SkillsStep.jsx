@@ -8,8 +8,8 @@ const TagInput = ({ label, value = [], onChange, error, skillType, ...props }) =
 
   // Color scheme based on skill type
   const colorScheme = skillType === 'teach' 
-    ? { bg: 'bg-blue-50', text: 'text-blue-800', border: 'border-blue-200', tagBg: 'bg-blue-100' }
-    : { bg: 'bg-green-50', text: 'text-green-800', border: 'border-green-200', tagBg: 'bg-green-100' };
+    ? { bg: 'bg-blue-900/40', text: 'text-blue-200', border: 'border-blue-700', tagBg: 'bg-blue-800/70' }
+    : { bg: 'bg-emerald-900/40', text: 'text-emerald-200', border: 'border-emerald-700', tagBg: 'bg-emerald-800/70' };
 
   const handleKeyDown = (e) => {
     if ((e.key === 'Enter' || e.key === ',') && inputValue.trim()) {
@@ -36,7 +36,7 @@ const TagInput = ({ label, value = [], onChange, error, skillType, ...props }) =
 
   return (
     <div className="relative mb-5">
-      <div className={`p-4 rounded-lg ${colorScheme.bg} border ${error ? 'border-red-300' : colorScheme.border}`}>
+      <div className={`p-4 rounded-lg ${colorScheme.bg} border ${error ? 'border-red-400' : colorScheme.border}`}>
         <label className={`block ${colorScheme.text} font-medium mb-2`}>
           {label}
         </label>
@@ -77,9 +77,9 @@ const TagInput = ({ label, value = [], onChange, error, skillType, ...props }) =
             onKeyDown={handleKeyDown}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
-            className={`appearance-none border bg-white
-              ${error ? 'border-red-300' : 'border-gray-300'}
-              rounded-lg w-full py-2.5 px-4 text-gray-700 leading-tight
+            className={`appearance-none border bg-slate-800
+              ${error ? 'border-red-400' : 'border-slate-700'}
+              rounded-lg w-full py-2.5 px-4 text-slate-100 leading-tight
               focus:outline-none`}
             placeholder="Type skill and press Enter or comma to add"
             {...props}
@@ -176,17 +176,17 @@ const SkillsStep = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="space-y-6"
+      className="space-y-6 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-800 min-h-screen text-slate-100 py-2"
     >
       <motion.div variants={itemVariants} className="text-center pb-2">
-        <div className="inline-flex items-center justify-center w-12 h-12 mb-3 rounded-full bg-blue-50">
-          <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="inline-flex items-center justify-center w-12 h-12 mb-3 rounded-full bg-blue-900">
+          <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
               d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
           </svg>
         </div>
-        <h2 className="text-2xl font-bold text-gray-800">Your Skills Exchange</h2>
-        <p className="text-gray-600 mt-1">Share what you can teach and what you want to learn</p>
+        <h2 className="text-2xl font-bold text-slate-100">Your Skills Exchange</h2>
+        <p className="text-slate-300 mt-1">Share what you can teach and what you want to learn</p>
       </motion.div>
       
       <motion.div variants={itemVariants}>
@@ -210,46 +210,54 @@ const SkillsStep = () => {
       </motion.div>
       
       <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className={`p-3 rounded-lg border ${willingToTeach ? 'bg-blue-50 border-blue-200' : 'bg-gray-50 border-gray-200'} cursor-pointer`}
+        <div className={`p-3 rounded-lg border transition-colors duration-200 cursor-pointer ${
+          willingToTeach ? 'bg-blue-900/40 border-blue-700' : 'bg-slate-900 border-slate-700'
+        }`}
           onClick={() => setWillingToTeach(!willingToTeach)}>
           <div className="flex items-center">
-            <div className={`w-5 h-5 rounded-md border flex items-center justify-center mr-2 ${willingToTeach ? 'bg-blue-600 border-blue-600' : 'border-gray-400'}`}>
+            <div className={`w-5 h-5 rounded-md border flex items-center justify-center mr-2 transition-colors duration-200 ${
+              willingToTeach ? 'bg-blue-600 border-blue-600' : 'border-slate-600'
+            }`}>
               {willingToTeach && (
                 <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
               )}
             </div>
-            <span className={`font-medium ${willingToTeach ? 'text-blue-800' : 'text-gray-700'}`}>I'm willing to teach others</span>
+            <span className={`font-medium transition-colors duration-200 ${willingToTeach ? 'text-blue-200' : 'text-slate-300'}`}>I'm willing to teach others</span>
           </div>
         </div>
 
-        <div className={`p-3 rounded-lg border ${willingToLearn ? 'bg-green-50 border-green-200' : 'bg-gray-50 border-gray-200'} cursor-pointer`}
+        <div className={`p-3 rounded-lg border transition-colors duration-200 cursor-pointer ${
+          willingToLearn ? 'bg-emerald-900/40 border-emerald-700' : 'bg-slate-900 border-slate-700'
+        }`}
           onClick={() => setWillingToLearn(!willingToLearn)}>
           <div className="flex items-center">
-            <div className={`w-5 h-5 rounded-md border flex items-center justify-center mr-2 ${willingToLearn ? 'bg-green-600 border-green-600' : 'border-gray-400'}`}>
+            <div className={`w-5 h-5 rounded-md border flex items-center justify-center mr-2 transition-colors duration-200 ${
+              willingToLearn ? 'bg-emerald-600 border-emerald-600' : 'border-slate-600'
+            }`}>
               {willingToLearn && (
                 <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
               )}
             </div>
-            <span className={`font-medium ${willingToLearn ? 'text-green-800' : 'text-gray-700'}`}>I'm looking to learn from others</span>
+            <span className={`font-medium transition-colors duration-200 ${willingToLearn ? 'text-emerald-200' : 'text-slate-300'}`}>I'm looking to learn from others</span>
           </div>
         </div>
       </motion.div>
       
-      <motion.div variants={itemVariants} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-        <label className="block text-gray-700 font-medium mb-2">
+      <motion.div variants={itemVariants} className="bg-slate-900 rounded-lg p-4 border border-slate-700">
+        <label className="block text-slate-200 font-medium mb-2">
           Supporting Documents (Optional)
         </label>
-        <div className="bg-white border border-dashed border-gray-300 rounded-lg p-4 text-center">
-          <svg className="w-8 h-8 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="bg-slate-800 border border-dashed border-slate-700 rounded-lg p-4 text-center">
+          <svg className="w-8 h-8 mx-auto text-slate-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} 
               d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
           </svg>
-          <p className="text-sm text-gray-500 mb-2">Drag & drop files or</p>
-          <label className="inline-block bg-blue-50 text-blue-700 hover:bg-blue-100 px-4 py-2 rounded-lg text-sm font-medium cursor-pointer transition-colors">
+          <p className="text-sm text-slate-400 mb-2">Drag & drop files or</p>
+          <label className="inline-block bg-blue-900 text-blue-200 hover:bg-blue-800 px-4 py-2 rounded-lg text-sm font-medium cursor-pointer transition-colors">
             Browse Files
             <input
               type="file"
@@ -258,7 +266,7 @@ const SkillsStep = () => {
               {...register('documents')}
             />
           </label>
-          <p className="text-xs text-gray-500 mt-2">
+          <p className="text-xs text-slate-500 mt-2">
             Upload certifications, portfolios or any other relevant documents
           </p>
         </div>

@@ -80,7 +80,7 @@ const Input = ({
           <input
             id={inputId}
             className={`
-              w-full px-3 rounded-lg border-2 bg-white transition-all duration-200
+              w-full px-3 rounded-lg border-2 bg-slate-800 transition-all duration-200
               ${isActive ? 'pt-6 pb-2' : 'py-3'}
               ${icon ? 'pl-10' : ''}
               ${getBorderColor()}

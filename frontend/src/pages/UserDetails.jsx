@@ -43,8 +43,8 @@ const UserDetails = () => {
     };
 
     return (
-        // Added pt-16 to account for navbar height
-        <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-16">
+        // Changed to dark gradient background
+        <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-800 pt-16">
             <AnimatePresence>
                 {isLoaded && (
                     <motion.div
@@ -56,28 +56,28 @@ const UserDetails = () => {
                     >
                         {/* Sleek header with integrated title - full width with adjusted positioning */}
                         <motion.div 
-                            className="bg-white border-b border-gray-200 shadow-sm py-3 px-4 sm:px-6 lg:px-8 mb-6"
+                            className="bg-slate-900 border-b border-slate-800 shadow-sm py-3 px-4 sm:px-6 lg:px-8 mb-6"
                             variants={contentVariants}
                         >
                             <div className="max-w-8xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
                                 <div>
                                     <div className="flex items-center mb-1">
-                                        <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-blue-600 shadow-lg">
+                                        <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-cyan-600 shadow-lg">
                                             <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
                                                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                             </svg>
                                         </div>
-                                        <h2 className="text-2xl font-bold text-gray-800 ml-3">SkillSwap</h2>
+                                        <h2 className="text-2xl font-bold text-slate-100 ml-3">SkillSwap</h2>
                                     </div>
-                                    <p className="text-sm text-gray-600 ml-1">
+                                    <p className="text-sm text-slate-400 ml-1">
                                         Complete your profile to start connecting with the community.
                                     </p>
                                 </div>
                                 
                                 <div className="flex items-center space-x-4">
-                                    <a href="#" className="text-blue-600 hover:text-blue-700 font-medium text-sm">How it works</a>
-                                    <a href="#" className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 shadow-sm transition-colors">
+                                    <a href="#" className="text-cyan-400 hover:text-cyan-300 font-medium text-sm">How it works</a>
+                                    <a href="#" className="px-4 py-2 bg-cyan-600 text-white text-sm rounded-lg hover:bg-cyan-700 shadow-sm transition-colors">
                                         Skip to Dashboard
                                     </a>
                                 </div>
@@ -89,11 +89,11 @@ const UserDetails = () => {
                             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
                                 {/* Main form column - takes more space */}
                                 <motion.div 
-                                    className="lg:col-span-10 bg-white shadow-xl rounded-xl overflow-hidden border border-gray-100"
+                                    className="lg:col-span-10 bg-slate-900 shadow-xl rounded-xl overflow-hidden border border-slate-800"
                                     variants={contentVariants}
                                 >
                                     {/* Enhanced header with gradient - more compact */}
-                                    <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-3 flex items-center">
+                                    <div className="bg-gradient-to-r from-cyan-500 to-cyan-700 px-6 py-3 flex items-center">
                                         <div className="bg-white/20 rounded-full p-2">
                                             <svg 
                                                 className="w-5 h-5 text-white" 
@@ -107,7 +107,7 @@ const UserDetails = () => {
                                         </div>
                                         <div className="ml-3">
                                             <h1 className="text-lg font-semibold text-white">Profile Setup</h1>
-                                            <p className="text-blue-100 text-xs">5-minute process to complete</p>
+                                            <p className="text-cyan-100 text-xs">5-minute process to complete</p>
                                         </div>
                                     </div>
                                     
@@ -138,25 +138,25 @@ const UserDetails = () => {
                                     variants={contentVariants}
                                 >
                                     {/* Community stats - more compact */}
-                                    <div className="bg-white shadow-lg rounded-xl p-4 border border-gray-100">
-                                        <h3 className="text-sm font-semibold text-gray-800 mb-3">Community Stats</h3>
+                                    <div className="bg-slate-900 shadow-lg rounded-xl p-4 border border-slate-800">
+                                        <h3 className="text-sm font-semibold text-slate-100 mb-3">Community Stats</h3>
                                         <div className="grid grid-cols-1 gap-3">
                                             {[
                                                 { label: 'Active Users', value: '12,580+' },
                                                 { label: 'Skills Shared', value: '8,350+' },
                                                 { label: 'Success Rate', value: '94%' }
                                             ].map((stat, index) => (
-                                                <div key={index} className="text-center p-2 rounded-lg bg-gray-50">
-                                                    <p className="text-base font-bold text-blue-600">{stat.value}</p>
-                                                    <p className="text-xs text-gray-500">{stat.label}</p>
+                                                <div key={index} className="text-center p-2 rounded-lg bg-slate-800">
+                                                    <p className="text-base font-bold text-cyan-400">{stat.value}</p>
+                                                    <p className="text-xs text-slate-400">{stat.label}</p>
                                                 </div>
                                             ))}
                                         </div>
                                     </div>
                                     
                                     {/* Why complete your profile section - more compact */}
-                                    <div className="bg-white shadow-lg rounded-xl p-4 border border-gray-100">
-                                        <h3 className="text-sm font-semibold text-gray-800 mb-3">Why Complete Profile?</h3>
+                                    <div className="bg-slate-900 shadow-lg rounded-xl p-4 border border-slate-800">
+                                        <h3 className="text-sm font-semibold text-slate-100 mb-3">Why Complete Profile?</h3>
                                         <ul className="space-y-2">
                                             {[
                                                 { text: 'Find matching partners', icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
@@ -164,10 +164,10 @@ const UserDetails = () => {
                                                 { text: 'Unlock all features', icon: 'M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z' },
                                             ].map((item, index) => (
                                                 <li key={index} className="flex items-start">
-                                                    <svg className="w-4 h-4 text-green-500 mr-1 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <svg className="w-4 h-4 text-green-400 mr-1 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
                                                     </svg>
-                                                    <span className="text-gray-700 text-xs">{item.text}</span>
+                                                    <span className="text-slate-200 text-xs">{item.text}</span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -181,18 +181,18 @@ const UserDetails = () => {
                                 variants={contentVariants}
                             >
                                 {/* Feature cards remain unchanged */}
-                                {[
-                                    { 
+                                {
+                                    [{ 
                                         title: 'Verify Skills', 
                                         text: 'Get verified by peers & experts', 
                                         icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
-                                        color: 'blue'
+                                        color: 'cyan'
                                     },
                                     { 
                                         title: 'Connect with Peers', 
                                         text: 'Find complementary skills', 
                                         icon: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',
-                                        color: 'indigo'
+                                        color: 'blue'
                                     },
                                     { 
                                         title: 'Learn & Teach', 
@@ -204,34 +204,34 @@ const UserDetails = () => {
                                         title: 'Track Progress', 
                                         text: 'Monitor your learning journey', 
                                         icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
-                                        color: 'green'
+                                        color: 'emerald'
                                     }
-                                ].map((item, index) => (
+                                    ].map((item, index) => (
                                     <motion.div 
                                         key={index}
-                                        className="bg-white shadow-md rounded-xl p-3 border border-gray-100 hover:shadow-lg transition-all duration-300"
+                                        className={`bg-slate-900 shadow-md rounded-xl p-3 border border-slate-800 hover:shadow-lg transition-all duration-300`}
                                         whileHover={{ y: -2, transition: { duration: 0.2 } }}
                                     >
-                                        <div className={`inline-flex items-center justify-center h-8 w-8 rounded-lg bg-${item.color}-50 mb-2`}>
-                                            <svg className={`w-4 h-4 text-${item.color}-600`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <div className={`inline-flex items-center justify-center h-8 w-8 rounded-lg bg-${item.color}-900 mb-2`}>
+                                            <svg className={`w-4 h-4 text-${item.color}-400`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
                                             </svg>
                                         </div>
-                                        <h3 className="text-base font-semibold text-gray-800 mb-0.5">{item.title}</h3>
-                                        <p className="text-gray-600 text-xs">{item.text}</p>
+                                        <h3 className="text-base font-semibold text-slate-100 mb-0.5">{item.title}</h3>
+                                        <p className="text-slate-400 text-xs">{item.text}</p>
                                     </motion.div>
                                 ))}
                             </motion.div>
                             
                             {/* Footer with trust indicators - more compact */}
                             <motion.div 
-                                className="mt-6 text-center border-t border-gray-200 pt-4 pb-6 mb-4"
+                                className="mt-6 text-center border-t border-slate-800 pt-4 pb-6 mb-4"
                                 variants={contentVariants}
                             >
-                                <p className="text-xs text-gray-500 mb-2">Trusted by professionals worldwide</p>
+                                <p className="text-xs text-slate-500 mb-2">Trusted by professionals worldwide</p>
                                 <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
                                     {['Microsoft', 'Google', 'Amazon', 'LinkedIn', 'Adobe', 'Salesforce'].map((company) => (
-                                        <span key={company} className="text-gray-400 font-medium text-xs">{company}</span>
+                                        <span key={company} className="text-slate-600 font-medium text-xs">{company}</span>
                                     ))}
                                 </div>
                             </motion.div>
@@ -245,11 +245,11 @@ const UserDetails = () => {
                 <div className="flex flex-col items-center justify-center h-[calc(100vh-4rem)]">
                     <div className="relative flex items-center justify-center">
                         {/* Outer spinning ring */}
-                        <div className="h-16 w-16 rounded-full border-3 border-t-blue-600 border-r-transparent border-b-blue-400 border-l-transparent animate-spin"></div>
+                        <div className="h-16 w-16 rounded-full border-3 border-t-cyan-600 border-r-transparent border-b-cyan-400 border-l-transparent animate-spin"></div>
                         
                         {/* Inner element */}
                         <div className="absolute">
-                            <div className="h-10 w-10 bg-blue-600 rounded-lg flex items-center justify-center animate-pulse">
+                            <div className="h-10 w-10 bg-cyan-600 rounded-lg flex items-center justify-center animate-pulse">
                                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                                         d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -257,7 +257,7 @@ const UserDetails = () => {
                             </div>
                         </div>
                     </div>
-                    <p className="mt-4 text-gray-600 font-medium animate-pulse text-sm">Loading your profile...</p>
+                    <p className="mt-4 text-slate-400 font-medium animate-pulse text-sm">Loading your profile...</p>
                 </div>
             )}
         </div>

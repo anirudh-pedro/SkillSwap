@@ -23,7 +23,7 @@ function Layout() {
   console.log("Layout rendering, loading state:", loading);
   
   return (
-    <div>
+    <div className='bg-gray-900 min-h-screen flex flex-col'>
         {loading && <Loader />}
         <Nav setLoaded={setLoading} />
         <Outlet />
