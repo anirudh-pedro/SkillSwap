@@ -3,7 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "../../../../libs/utils";
-const LampContainer: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className }) => {
+
+const LampContainer = ({ children, className }) => {
   return (
     <div
       className={cn(
@@ -67,6 +68,7 @@ const LampContainer: React.FC<{ children: React.ReactNode; className?: string }>
           }}
           className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-cyan-400"
         ></motion.div>
+
         <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-slate-950"></div>
       </div>
       <div className="relative z-50 flex -translate-y-80 flex-col items-center px-5">{children}</div>
@@ -74,9 +76,9 @@ const LampContainer: React.FC<{ children: React.ReactNode; className?: string }>
   );
 };
 
-const LampDemo: React.FC = () => {
+const LampDemo = () => {
   return (
-    <LampContainer>
+    <LampContainer className="bg-gradient-to-br from-slate-950 to-slate-800">
       <motion.h1
         initial={{ opacity: 0.5, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}

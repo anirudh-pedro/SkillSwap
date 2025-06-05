@@ -1,23 +1,11 @@
 "use client";
 import React, { useId, useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import type { Container } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 import { cn } from "../../../../libs/utils";
 import { motion, useAnimation } from "framer-motion";
 
-type ParticlesProps = {
-  id?: string;
-  className?: string;
-  background?: string;
-  minSize?: number;
-  maxSize?: number;
-  speed?: number;
-  particleColor?: string;
-  particleDensity?: number;
-};
-
-const SparklesCore: React.FC<ParticlesProps> = (props) => {
+const SparklesCore = (props) => {
   const {
     id,
     className,
@@ -38,34 +26,68 @@ const SparklesCore: React.FC<ParticlesProps> = (props) => {
     });
   }, []);
 
-  const controls = useAnimation();
-
-  const particlesLoaded = async (container?: Container) => {
-    if (container) {
-      controls.start({ opacity: 1, transition: { duration: 1 } });
-    }
+  const particlesLoaded = async (container) => {
+    console.log(container);
   };
 
   const generatedId = useId();
+  
   return (
-    <motion.div animate={controls} className={cn("opacity-0", className)}>
+    <motion.div className={cn("opacity-0", className)} id={id || generatedId}>
       {init && (
         <Particles
+          key={id || generatedId}
           id={id || generatedId}
-          className={cn("h-20 w-60")}
           particlesLoaded={particlesLoaded}
+          style={{
+            background,
+          }}
           options={{
-            background: { color: { value: background || "#0d47a1" } },
-            fullScreen: { enable: false, zIndex: 1 },
-            fpsLimit: 130,
+            background: {
+              color: {
+                value: background || "#0d47a1",
+              },
+            },
+            fullScreen: {
+              enable: false,
+              zIndex: 1,
+            },
+            fpsLimit: 120,
             interactivity: {
               events: {
-                onClick: { enable: true, mode: "push" },
-                resize: true as any,
+                onClick: {
+                  enable: true,
+                  mode: "push",
+                },
+                onHover: {
+                  enable: false,
+                  mode: "repulse",
+                },
+                resize: true,
               },
-              modes: { push: { quantity: 4 } },
+              modes: {
+                push: {
+                  quantity: 90,
+                },
+                repulse: {
+                  distance: 200,
+                  duration: 0.4,
+                },
+              },
             },
             particles: {
+              bounce: {
+                horizontal: { value: 1 },
+                vertical: { value: 1 },
+              },
+              collisions: {
+                absorb: { speed: 2 },
+                bounce: { horizontal: { value: 1 }, vertical: { value: 1 } },
+                enable: false,
+                maxSpeed: 50,
+                mode: "bounce",
+                overlap: { enable: true, retries: 0 },
+              },
               color: { value: particleColor || "#ffffff" },
               move: { enable: true, speed: speed || 1.5, direction: "none" },
               number: { value: particleDensity || 300, density: { enable: true } },
@@ -81,7 +103,7 @@ const SparklesCore: React.FC<ParticlesProps> = (props) => {
   );
 };
 
-const SparklesPreview: React.FC = () => {
+const SparklesPreview = () => {
   return (
     <div className="h-fit w-fit bg-transparent flex flex-col items-center justify-center overflow-hidden rounded-md">
       <h1 className="text-3xl font-bold text-center text-white relative z-20">
@@ -89,18 +111,17 @@ const SparklesPreview: React.FC = () => {
       </h1>
       <div className="w-[12rem] h-5 relative">
         {/* Gradients */}
-        <div className="absolute inset-x-6 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
-        <div className="absolute inset-x-6 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
 
         {/* Core component */}
         <SparklesCore
           background="transparent"
           minSize={0.4}
           maxSize={1}
-          particleDensity={10000}
-          speed={0.8}
+          particleDensity={1200}
           className="w-full h-full"
           particleColor="#FFFFFF"
         />
@@ -112,4 +133,5 @@ const SparklesPreview: React.FC = () => {
   );
 };
 
-export default SparklesPreview;
+export default SparklesCore;
+export { SparklesPreview };

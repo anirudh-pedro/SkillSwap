@@ -5,9 +5,12 @@ const Navbar = ({setLoaded}) => {
   // setLoaded is used to show a loading indicator during page transitions
   
   return (
-    <>
-      <NavTabs setLoaded={setLoaded} tabs={['Home', 'Connect', 'About',"Contact Us", 'Profile']} />
-    </>
+    <div className="flex items-center justify-center">
+      <NavTabs 
+        setLoaded={setLoaded} 
+        tabs={['Home', 'Connect', 'About', 'Contact Us', 'Profile']} 
+      />
+    </div>
   )
 }
 
