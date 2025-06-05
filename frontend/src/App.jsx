@@ -1,6 +1,5 @@
 import React from "react";
 import Nav from "./components/Nav";
-// import Outlet from "./pages/Outlet";
 import {Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
 import GetStarted from "./pages/GetStarted";
