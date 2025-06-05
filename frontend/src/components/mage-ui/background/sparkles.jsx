@@ -33,7 +33,8 @@ const SparklesCore = (props) => {
   const generatedId = useId();
   
   return (
-    <motion.div className={cn("opacity-0", className)} id={id || generatedId}>
+    // Remove opacity-0 to make it visible
+    <motion.div className={cn("", className)} id={id || generatedId} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
       {init && (
         <Particles
           key={id || generatedId}
